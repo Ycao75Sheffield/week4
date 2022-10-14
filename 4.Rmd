@@ -1,0 +1,101 @@
+---
+title: "week4"
+output: html_document
+date: "2022-10-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(MASS)
+```
+
+```{r}
+data("women")
+women
+```
+```{r}
+summary(women)
+```
+
+```{r}
+hist(women$height)
+```
+
+```{r}
+hist(x=women$height, breaks=4, main="Histogram showing women's heights", 
+xlab="Height")
+```
+
+```{r}
+ par(mfrow=c(1,2))
+ hist(x=women$height, breaks=4, main="Heights", xlab="Height")
+ hist(x=women$weight, breaks=2, main="Weights", xlab="Weight")
+```
+
+```{r}
+ plot(women) # uses the default scatterplot settings
+
+```
+
+```{r}
+data()
+```
+
+```{r}
+ library(tidyverse)
+ testFile<-read_tsv("test (2).tsv")
+ testFile
+```
+
+```{r}
+ library(tidyverse)
+ testFile<-read_tsv("test (2).tsv", col_names=FALSE)
+ testFile
+```
+```{r}
+ testCSVFile<-read_csv("freeschoolmeals (2).csv")
+ head(testCSVFile)
+```
+
+```{r}
+ testCSVFile<-read_csv("freeschoolmeals (2).csv", col_types="cciici")
+ head(testCSVFile)
+```
+
+```{r}
+install.packages("readtext") # for data preparation
+library(readtext)
+```
+
+
+```{r}
+txt <- readtext("http://ir.shef.ac.uk/cloughie/download/inaugral.txt") # plaintext
+```
+```{r}
+ str(txt)
+```
+
+```{r}
+txt$text
+```
+
+```{r}
+install.packages("rvest")
+ library(rvest) 
+```
+```{r}
+url <- "https://en.wikipedia.org/wiki/Sheffield"
+wikiPage <- read_html(url)
+```
+
+
+
+
+
+
+
+
+
